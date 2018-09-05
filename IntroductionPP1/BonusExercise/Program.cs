@@ -23,7 +23,7 @@ namespace BonusExercise
             Console.WriteLine(number3);
             Console.WriteLine(number4);
 
-            // Ask the user for his solution
+            // Ask the user for their solution
             Console.WriteLine();
             Console.WriteLine("Please enter your solution:");
 
