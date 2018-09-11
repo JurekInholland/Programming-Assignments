@@ -199,6 +199,7 @@ namespace Lingo
                     if (playerWord[i] == lingoWord[i])
                     {
                         status[i] = 1;
+                        // remove character from remaining
                         int index = remaining.IndexOf(playerWord[i]);
                         remaining = remaining.Remove(index, 1);
                     }
@@ -210,6 +211,7 @@ namespace Lingo
                         if (remaining.Contains(character) && status[i] != 1)
                         {
                             status[i] = 2;
+                            // remove character from remaining
                             int index = remaining.IndexOf(playerWord[i]);
                             remaining = remaining.Remove(index, 1);
                         }
