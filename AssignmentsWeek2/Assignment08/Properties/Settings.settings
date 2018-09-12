@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Assignment08.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">64, 64</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

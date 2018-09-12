@@ -1,0 +1,5 @@
+C:\Users\Juri\Source\Repos\programming\IntroductionPP1\BonusExercise\bin\Debug\BonusExercise.exe
+C:\Users\Juri\Source\Repos\programming\IntroductionPP1\BonusExercise\bin\Debug\BonusExercise.pdb
+C:\Users\Juri\Source\Repos\programming\IntroductionPP1\BonusExercise\obj\x86\Debug\BonusExercise.csproj.CoreCompileInputs.cache
+C:\Users\Juri\Source\Repos\programming\IntroductionPP1\BonusExercise\obj\x86\Debug\BonusExercise.exe
+C:\Users\Juri\Source\Repos\programming\IntroductionPP1\BonusExercise\obj\x86\Debug\BonusExercise.pdb
