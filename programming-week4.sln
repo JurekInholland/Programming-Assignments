@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assingment01", "Assingment1\Assingment01.csproj", "{A1F146DA-72ED-47C5-B4F1-2ADE86329913}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment02", "Assignment02\Assignment02.csproj", "{812B378D-E179-4A9F-B218-E5F27311D0FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment03", "Assignment03\Assignment03.csproj", "{B2584603-7CCF-4CE6-BDF5-AB9C7FD56E14}"
@@ -17,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment06", "Assignment0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment07", "Assignment07\Assignment07.csproj", "{F384B8DA-46D9-44F3-BC8E-BA78D34006AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{67AB6534-3C18-4E15-9B82-74D001D9EE6F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment08", "Assignment08\Assignment08.csproj", "{4090ECAE-7348-4FB6-B335-D01A109CDEC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment01", "Assignment01\Assignment01.csproj", "{58EBA95A-EC7E-4141-8EAB-8EBFFEA95433}"
@@ -29,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1F146DA-72ED-47C5-B4F1-2ADE86329913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1F146DA-72ED-47C5-B4F1-2ADE86329913}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1F146DA-72ED-47C5-B4F1-2ADE86329913}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1F146DA-72ED-47C5-B4F1-2ADE86329913}.Release|Any CPU.Build.0 = Release|Any CPU
 		{812B378D-E179-4A9F-B218-E5F27311D0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{812B378D-E179-4A9F-B218-E5F27311D0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812B378D-E179-4A9F-B218-E5F27311D0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,10 +49,6 @@ Global
 		{F384B8DA-46D9-44F3-BC8E-BA78D34006AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F384B8DA-46D9-44F3-BC8E-BA78D34006AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F384B8DA-46D9-44F3-BC8E-BA78D34006AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67AB6534-3C18-4E15-9B82-74D001D9EE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67AB6534-3C18-4E15-9B82-74D001D9EE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67AB6534-3C18-4E15-9B82-74D001D9EE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67AB6534-3C18-4E15-9B82-74D001D9EE6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4090ECAE-7348-4FB6-B335-D01A109CDEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4090ECAE-7348-4FB6-B335-D01A109CDEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4090ECAE-7348-4FB6-B335-D01A109CDEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU

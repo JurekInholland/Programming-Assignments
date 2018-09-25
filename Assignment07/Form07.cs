@@ -15,7 +15,13 @@ namespace Assignment07
         /// <summary>
         /// Assignment 7 (Windows Application)
         /// Draw the following pattern, a square border with side n.
-        /// For example, n = 5 produces the following result:        ///         /// XXXXX        /// X   X        /// X   X        /// X   X        /// XXXXX
+        /// For example, n = 5 produces the following result:
+        /// 
+        /// XXXXX
+        /// X   X
+        /// X   X
+        /// X   X
+        /// XXXXX
         /// </summary>
         public Form07()
         {
