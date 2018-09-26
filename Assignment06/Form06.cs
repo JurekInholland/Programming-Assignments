@@ -27,14 +27,14 @@ namespace Assignment06
             string textInput = txtStart.Text;
             double sum = double.Parse(textInput);
 
-            // Loop once for each year (5)
+            // Loop once for each year (5x)
             for (int i = 0; i < 5; i++)
             {
                 // Add 5% interest
                 sum += sum * 0.05;
             }
-            CultureInfo nl = new CultureInfo("nl-NL");
             // update label in the correct format
+            CultureInfo nl = new CultureInfo("nl-NL");
             lblFinalCap.Text = sum.ToString("C2", nl);
         }
     }

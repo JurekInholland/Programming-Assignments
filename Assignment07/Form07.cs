@@ -15,7 +15,13 @@ namespace Assignment07
         /// <summary>
         /// Assignment 7 (Windows Application)
         /// Draw the following pattern, a square border with side n.
-        /// For example, n = 5 produces the following result:        ///         /// XXXXX        /// X   X        /// X   X        /// X   X        /// XXXXX
+        /// For example, n = 5 produces the following result:
+        /// 
+        /// XXXXX
+        /// X   X
+        /// X   X
+        /// X   X
+        /// XXXXX
         /// </summary>
         public Form07()
         {
@@ -24,6 +30,7 @@ namespace Assignment07
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            // Parse text field
             string sidesStr = txtSides.Text;
             int sides = int.Parse(sidesStr);
             string output = "";

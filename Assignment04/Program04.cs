@@ -25,11 +25,11 @@ namespace Assignment04
 
                 if (i > 1)
                 {
-                    // Create sum ov previous two array elements
+                    // Create sum of previous two array elements
                     fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
                 }
 
-                // Handle number 1 and 2, which are both 1 seperately
+                // Handle number 1 and 2, which are both 1, seperately
                 else
                 {
                     fibonacciNumbers[i] = 1;

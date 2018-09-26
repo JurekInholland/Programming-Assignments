@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment01
 {
+
     class Program01
     {
+
         /// <summary>
         /// Assignment 1 (Console Application)
         /// Several numbers are entered until number 0 is stated.
@@ -15,14 +17,19 @@ namespace Assignment01
         /// </summary>
         static void Main(string[] args)
         {
+            // Use a dot as decimal seperator unaffected by os locale settings
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+
             // Declare and set iterator and sum; make loop exitable
             int i = 0;
             int sum = 0;
             int stop = 0;
             
-            while (stop != 1)
+            while (stop == 0)
             {
-                // Get user input
+                // Parse user input
                 Console.Write("Enter a number: ");
                 string userInput = Console.ReadLine();
                 int inputInt = int.Parse(userInput);
@@ -32,9 +39,9 @@ namespace Assignment01
                 // Calculate result once 0 is entered
                 if (userInput == "0")
                 {
+                    // Calculate average of positive inputs
                     if (i != 0)
                     {
-                        // Calculate average of positive inputs
                         result = Convert.ToDouble(sum) / Convert.ToDouble(i);
                     }
 
@@ -46,8 +53,8 @@ namespace Assignment01
                     stop = 1;
                 }
 
-                // Calculate sum of positive inputs
-                if (inputInt >= 0)
+                // Sum up positive inputs
+                if (inputInt > 0)
                 {
                     i++;
                     sum += inputInt;
