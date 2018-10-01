@@ -33,7 +33,7 @@ namespace Assignment01
             for (int i = 0; i < NUMBERS; i++ )
             {
                 // Generate a random number betwen 0 and 200
-                randomNr = rnd.Next(0, 200);
+                randomNr = rnd.Next(0, 201);
                 
                 // Assign the random number to the current array element
                 numbersArray[i] = randomNr;
