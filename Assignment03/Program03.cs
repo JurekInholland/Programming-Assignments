@@ -10,6 +10,11 @@ namespace Assignment03
     {
         static void Main(string[] args)
         {
+            // Use a dot as decimal seperator unaffected by os locale settings
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+
             // Parse user input
             Console.Write("Enter course name: ");
             string course = Console.ReadLine();
@@ -59,13 +64,13 @@ namespace Assignment03
             // Output average and top student
             Console.WriteLine();
             Console.WriteLine("Average grade: {0}", averageGrade.ToString("0.00"));
-            Console.WriteLine("Student {0} has maximum grade {1}", studentNames[bestStudent], studentGrades[bestStudent]);
+            Console.WriteLine("Student {0} has maximum grade {1}", studentNames[bestStudent], studentGrades[bestStudent].ToString("0.00"));
             Console.WriteLine();
 
             // Display detailed student information
             for (int i = 0; i < numberOfStudents; i++)
             {
-                Console.WriteLine("Grade for student {0} (course {1}) is: {2}", studentNames[i], course, studentGrades[i]);
+                Console.WriteLine("Grade for student {0} (course {1}) is: {2}", studentNames[i], course, studentGrades[i].ToString("0.0"));
             }
             Console.ReadKey();
         }
