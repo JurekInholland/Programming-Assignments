@@ -10,7 +10,7 @@ namespace Assignment02
     {
         /// <summary>
         /// Assignment 2 (Console Application)
-        /// First, a target number is entered and then several numbers
+        /// First, a target number is entered and then several numbers.
         /// Determine and print the number of numbers that are equal to the target number.
         /// </summary>
         static void Main(string[] args)

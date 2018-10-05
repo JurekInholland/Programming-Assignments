@@ -25,7 +25,7 @@ namespace Assignment08
 
         private void BtnCompare_Click(object sender, EventArgs e)
         {
-            // Parse text field as int
+            // Parse text field as long int
             string numberStr = txtNumber.Text;
             long number = long.Parse(numberStr);
 
