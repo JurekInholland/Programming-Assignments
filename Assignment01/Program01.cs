@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment01
 {
     class Program01
     {
+        /// <summary>
+        /// Assignment 1 (Console Application)
+        /// Enter a price.Use a separate method to determine the 21% VAT on this price;
+        /// this method accepts afloat parameter and returns a float value(‘return value type’ is float).
+        /// Print the price, VAT, and the price + VAT.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // Parse input

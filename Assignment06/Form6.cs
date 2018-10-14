@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment06
 {
-    public partial class Form1 : Form
+    /// <summary>
+    /// Assignment 6 (Windows Application)
+    /// This application is calculating(and displaying) the square of a number entered.
+    /// Three methods can be used to calculate squares.
+    /// The first method is based on the principle of ‘call by reference’,
+    /// the second on ‘call by reference out’ and the third on ‘call by value’. 
+    /// </summary>
+    public partial class Form6 : Form
     {
         int number;
 
-        public Form1()
+        public Form6()
         {
             InitializeComponent();
         }
@@ -41,17 +41,17 @@ namespace Assignment06
         }
 
         // Square methods
-        void SquareByReference(ref int number)
+        static void SquareByReference(ref int number)
         {
             number = number * number;
         }
 
-        void SquareByReferenceOut(int number, out int square)
+        static void SquareByReferenceOut(int number, out int square)
         {
             square = number * number;
         }
 
-        int SquareByValue(int number)
+        static int SquareByValue(int number)
         {
             return number * number;
         }

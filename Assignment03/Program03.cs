@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment03
 {
     class Program03
     {
+        /// <summary>
+        /// Assignment 3 (Console Application)
+        /// Several years are entered until number 0 is stated.
+        /// Use a separate method 'IsLeapYear' to determine whether each year is a leap year;        /// this method accepts an int parameter and returns a boolean value.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             int number = 1;

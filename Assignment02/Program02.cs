@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment02
 {
     
     class Program02
     {
-        
+        /// <summary>
+        /// Assignment 2 (Console Application)
+        /// Several numbers are entered until number 0 is stated.
+        /// Use a separate method 'IsPrimeNumber' to determine
+        /// whether the positive numbers(>0) are prime numbers;
+        /// this method accepts an intparameter and returns a boolean value.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             int number = 1;
