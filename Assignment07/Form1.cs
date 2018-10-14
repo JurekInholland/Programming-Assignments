@@ -73,10 +73,5 @@ namespace Assignment07
         {
             return (Convert.ToDouble(f) - 32) * 5 / 9;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
