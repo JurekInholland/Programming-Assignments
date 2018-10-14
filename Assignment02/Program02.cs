@@ -13,19 +13,23 @@ namespace Assignment02
         static void Main(string[] args)
         {
             int number = 1;
+
+            // Parse input as long as number is not zero
             while (number != 0)
             {
                 Console.Write("Enter a number (0 is stop value): ");
                 number = Convert.ToInt32(Console.ReadLine());
 
+                // Do not check negative numbers
                 if (number < 0)
                 {
                     Console.WriteLine("Negative number entered...");
                 }
-                else
+                // Check positive non-zero numbers for primeness using the primeCheck method
+                else if (number != 0)
                 {
-                    bool primeCheck = IsPrime(number);
-                    if (primeCheck == true)
+                    // Print output depending on result
+                    if (IsPrime(number))
                     {
                         Console.WriteLine("{0} is a prime number", number);
                     }
@@ -34,7 +38,11 @@ namespace Assignment02
                         Console.WriteLine("{0} is not a prime number", number);
                     }
                 }
-                
+                // Do nothing if zero is entered
+                else
+                {
+                    Console.WriteLine("end of program");
+                }
             }
             Console.ReadKey();
         }
