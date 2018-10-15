@@ -16,32 +16,32 @@ namespace Assignment04
             Console.Write("Enter a text> ");
             string inputText = Console.ReadLine();
 
-            // Assign a tuple of 3 ints to the return value of the custom search method.
-            // The input text as well as the 3 characters ".", "," and ";"
-            // are passed to the method as strings.
-            (int firstOccurence, int secondOccurence, int thirdOccurence) = SearchText(inputText, ".", ",", ";");
+            // Call custom method with 3 out parameters
+            SearchText(inputText, out int nrOfStops, out int nrOfCommas, out int nrOfSemicolons);
 
             // Output the result to the user
-            Console.WriteLine("result: {0} full stops, {1} commas, {2} semicolons", firstOccurence, secondOccurence, thirdOccurence);
+            Console.WriteLine("result: {0} full stops, {1} commas, {2} semicolons", nrOfStops, nrOfCommas, nrOfSemicolons);
             Console.ReadKey();
-
         }
 
         /// <summary>
-        /// Takes a text string to search as well as 3 search strings.
-        /// Returns a tuple of 3 ints, reflecting the number of occurences
-        /// of each search string in the text.
+        /// Takes a text string to search as well as 3 out variables.
+        /// Counts and stores occurences of search strings in a text.
         /// </summary>
         /// <param name="input"></param>
         /// <param name="char1"></param>
         /// <param name="char2"></param>
         /// <param name="char3"></param>
         /// <returns></returns>
-        static Tuple<int, int, int> SearchText(string input, string char1, string char2, string char3)
+        static void SearchText(string input, out int nrOfFullStops, out int nrOfCommas, out int nrOfSemiColons)
         {
-            int occurence1 = 0;
-            int occurence2 = 0;
-            int occurence3 = 0;
+            nrOfFullStops = 0;
+            nrOfCommas = 0;
+            nrOfSemiColons = 0;
+
+            string char1 = ".";
+            string char2 = ",";
+            string char3 = ";";
 
             // Loop through each character in the search string
             // and count the occurences of the search strings.
@@ -49,19 +49,17 @@ namespace Assignment04
             {
                 if (c == char1[0])
                 {
-                    occurence1++;
+                    nrOfFullStops++;
                 }
                 else if (c == char2[0])
                 {
-                    occurence2++;
+                    nrOfCommas++;
                 }
                 else if (c == char3[0])
                 {
-                    occurence3++;
+                    nrOfSemiColons++;
                 }
             }
-            // Return the number of occurences as ints inside a tuple
-            return Tuple.Create(occurence1, occurence2, occurence3);
         }
     }
 }

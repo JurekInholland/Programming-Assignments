@@ -8,7 +8,8 @@ namespace Assignment07
     /// A Windows Forms application must be designed and implemented to convert temperatures.
     /// If, for example, a temperature is entered in degrees Celsius,
     /// it can be converted to Kelvin or degrees Fahrenheit or vice versa
-    /// by selecting a radiobutton and clicking the Calculate button.
+    /// by selecting a radiobutton and clicking the Calculate button.
+
     /// </summary>
     public partial class Form7 : Form
     {
