@@ -31,9 +31,23 @@ namespace Assignment2
                 PrintPerson(persons[i]);
             }
 
+
+            Console.WriteLine("Celebrating birthday!");
+
+            CelebrateBirthday(persons[0]);
+
+            PrintPerson(persons[0]);
+
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Takes a person and increases their age by 1
+        /// </summary>
+        void CelebrateBirthday(Person p)
+        {
+            p.Age += 1;
+        }
 
         /// <summary>
         /// Read personal information and return a Person struct
@@ -41,7 +55,8 @@ namespace Assignment2
         /// <returns></returns>
         Person ReadPerson()
         {
-            Person person;
+            // Pass by reference to be able to celebreate birthday
+            Person person = new Person();
 
             // Use various Read methods to gather all information
             person.FirstName = ReadString("Enter first name: ");

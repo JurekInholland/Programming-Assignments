@@ -16,7 +16,7 @@ namespace Assignment0
         }
 
         /// <summary>
-        /// Start is used call other methods of the Program.
+        /// Start is used to call other methods of the Program.
         /// </summary>
         void Start()
         {
@@ -29,11 +29,12 @@ namespace Assignment0
             string name = ReadString("What is your name? ");
             Console.WriteLine("Nice meeting you {0}.", name);
 
-            Console.ReadKey();
+            Console.ReadKey();
+
         }
 
         /// <summary>
-        /// Print a given question and return it's answer as an int.
+        /// Print a given question and return it's answer as int.
         /// </summary>
         /// <param name="question"></param>
         /// <returns></returns>
