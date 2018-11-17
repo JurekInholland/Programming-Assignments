@@ -29,7 +29,8 @@ namespace Assignment0
             string name = ReadString("What is your name? ");
             Console.WriteLine("Nice meeting you {0}.", name);
 
-            Console.ReadKey();
+            Console.ReadKey();
+
         }
 
         /// <summary>
