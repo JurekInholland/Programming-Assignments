@@ -53,8 +53,10 @@ namespace Assignment1
 
             writer.Close();
 
-        }
-        Person ReadPerson(string filename)        {
+        }
+
+        Person ReadPerson(string filename)
+        {
             StreamReader reader = new StreamReader(filename);
 
             Person p = new Person

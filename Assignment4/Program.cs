@@ -13,8 +13,41 @@ namespace Assignment4
 
         void Start()
         {
-            RegularCandies[,] playingField = new RegularCandies[8, 8];
-            InitCandies(playingField);
+            //RegularCandies[,] playingField = new RegularCandies[8, 8];
+            //InitCandies(playingField);
+
+            RegularCandies[,] playingField = new RegularCandies[8, 8]; ;
+
+            string filename = "playingfield.txt";
+
+            bool fileread = false;
+
+            if (File.Exists(filename))
+            {
+                Console.WriteLine("Loading");
+                try
+                {
+                    playingField = ReadPlayingField(filename);
+                    fileread = true;
+                }
+
+                catch (Exception)
+                {
+                    fileread = false;
+                }
+
+
+            }
+
+            if (!fileread)
+            {
+                Console.WriteLine("Generating new field");
+                playingField = new RegularCandies[8, 8];
+                InitCandies(playingField);
+
+                WritePlayingField(playingField, filename);
+            }
+
             DisplayCandies(playingField);
 
             bool rowScored = ScoreRowPresent(playingField);
@@ -42,37 +75,80 @@ namespace Assignment4
             Console.ReadKey();
         }
 
-        void WritePlayingField(RegularCandies[,] playingField, string filename)
-        {
-            string line;
-            StreamWriter writer = new StreamWriter(filename);
-
-            for (int row = 0; row < playingField.GetLength(0); row++)
-            {
-                line = "";
-
-                for (int col = 0; col < playingField.GetLength(1); col++)
-                {
-                    line += playingField[row, col];
-                }
-                writer.WriteLine(line);
-            }
-            writer.Close();
-        }
 
         RegularCandies[,] ReadPlayingField(string filename)
         {
+            StreamReader reader = new StreamReader(filename);
             RegularCandies[,] playingField = new RegularCandies[8, 8];
+
+            int currentRow = 0;
+            int currentCol = 0;
+
+
+            try
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+
+                    foreach (Char c in line)
+                    {
+
+                        bool readChar = int.TryParse(c.ToString(), out int fieldValue);
+                        playingField[currentRow, currentCol] = (RegularCandies)fieldValue;
+
+                        if (currentCol < 7)
+                        {
+                            currentCol++;
+                        }
+                        else
+                        {
+                            currentCol = 0;
+                            currentRow++;
+                        }
+
+                    }
+
+                }
+            }
+
+
+
+            // Make sure reader is always closed
+            finally
+            {
+                reader.Close();
+            }
+            
+
+            return playingField;
+
+        }
+
+        /// <summary>
+        /// Writes a playing field state to a text file
+        /// </summary>
+        /// <param name="playingField">The playing field to save</param>
+        /// <param name="filename">The filename of the text file</param>
+        void WritePlayingField(RegularCandies[,] playingField, string filename)
+        {
+            StreamWriter writer = new StreamWriter(filename);
+
+            string line = "";
 
             for (int row = 0; row < playingField.GetLength(0); row++)
             {
                 for (int col = 0; col < playingField.GetLength(1); col++)
                 {
-
+                    line += (int)playingField[row, col];
                 }
+                writer.WriteLine(line);
+                line = "";
             }
 
+            writer.Close();
         }
+
 
         bool ScoreColumnPresent(RegularCandies[,] matrix)
         {
@@ -153,6 +229,7 @@ namespace Assignment4
                 {
                     matrix[row, col] = (RegularCandies)rng.Next(1, 7);
                 }
+
             }
         }
 

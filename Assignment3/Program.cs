@@ -1,9 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment3
 {
@@ -25,63 +21,50 @@ namespace Assignment3
 
         }
 
-        void DisplayAllWordsInLine(string line, string word)
+        /// <summary>
+        /// Takes a string and highlights all occurences of the given word in red
+        /// </summary>
+        /// <param name="line">Entire text string to process</param>
+        /// <param name="word">Word to highlight</param>
+        void DisplayAllWordsInLine2(string line, string word)
         {
-            IEnumerable<int> index = line.ToLower().AllIndexesOf(word.ToLower());
-
-            int start = 0;
-            int count = 0;
-            int firstLen = 0;
-            int wordLen = word.Length;
-            foreach (int ind in index)
+            // Loop as long as the remaining text contains the word to highlight 
+            while (WordInLine(line, word))
             {
-                //Console.Write("iter: {0} start: {1} ind: {2} greyLen: {3}", count, start, ind, firstLen);
-                if (count == 0)
-                {
-                    firstLen = ind;
-                }
-                else
-                {
-                    firstLen = ind - start;
-                }
+                // Get the position of the word within the string
+                int position = line.ToLower().IndexOf(word.ToLower());
 
-                string first = line.Substring(start, firstLen);
-                string colored = line.Substring(ind, word.Length);
-                //string rest = line.Substring(ind + word.Length);
+                // Create a substring containing everything until the search string
+                string first = line.Substring(0, position);
 
-                start = ind + word.Length + 1;
-                firstLen = first.Length;
-                count++;
+                // Create a substring containing the word to highlight
+                string colored = line.Substring(position, word.Length);
+
+                // Process the remaining string further
+                line = line.Substring(position + word.Length);
+
                 Console.Write(first);
+
+                // Highlight word
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(colored);
+
                 Console.ResetColor();
-                //Console.Write(rest);
-                //Console.WriteLine();
             }
-            Console.Write(line.Substring(index.Last() + wordLen));
+
+            // Print the last part of the last substring
+            Console.Write(line);
+
             Console.WriteLine();
             Console.WriteLine();
 
         }
 
-        void DisplayWordInLine(string line, string word)
-        {
-            int start = line.ToLower().IndexOf(word);
-            //Console.WriteLine("START: {0}", start);
-            string first = line.Substring(0, start);
-            string colored = line.Substring(start, word.Length);
-            string rest = line.Substring(start + word.Length);
-
-            Console.Write(first);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write(colored);
-            Console.ResetColor();
-            Console.Write(rest);
-            Console.WriteLine();
-            Console.WriteLine();
-        }
-
+        /// <summary>
+        /// Returns true if the given line contains the given word
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="word"></param>
         bool WordInLine(string line, string word)
         {
             if (line.ToLower().Contains(word.ToLower()))
@@ -91,21 +74,32 @@ namespace Assignment3
             return false;
         }
 
+        /// <summary>
+        /// Counts the number of occurences of the given word within the given text file
+        /// </summary>
+        /// <param name="filename">Path to the text file</param>
+        /// <param name="word">Word to search</param>
+        /// <returns>Number of occurences of the word</returns>
         int SearchWordInFile(string filename, string word)
         {
             StreamReader reader = new StreamReader(filename);
             int occurences = 0;
+
+            // Iterate over all lines in text file
             while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine();
+
                 if (WordInLine(line, word))
                 {
+                    // Count occurences
                     occurences++;
-                    //DisplayWordInLine(line, word);
-                    //Console.WriteLine("displaying all words:");
-                    DisplayAllWordsInLine(line, word);
+
+                    // Display the line; highlight the word
+                    DisplayAllWordsInLine2(line, word);
                 }
             }
+            reader.Close();
             return occurences;
         }
 
